@@ -4,8 +4,8 @@ services:
   # Go 应用服务
   app:
     build: .
-    container_name: xiaobaijiangye/my-app
-    image: liuyan:v2  # 使用从 Docker Hub 推送的镜像名称
+    container_name: go-app
+    image: xiaobaijiangye/my-app  # 使用从 Docker Hub 推送的镜像名称
     environment:
       - DB_HOST=mysql-test      # 连接到 MySQL 容器，使用服务名
       - DB_PORT=3306
