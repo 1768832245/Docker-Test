@@ -14,6 +14,8 @@ services:
       - DB_NAME=messagesboard
     depends_on:
       - mysql    # 确保 MySQL 服务在应用之前启动
+    ports:
+      - "8080:8080"
     networks:
       - app-network
     command: [ "./main", "-db", "true" ]
