@@ -9,7 +9,7 @@ on:
 # 工作流的定义
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: archlinux-latest
 
     steps:
       # 检出代码
@@ -33,7 +33,7 @@ jobs:
         with:
           context: .  # 指定 Dockerfile 和上下文路径
           push: true  # 设置为 true 表示构建后推送镜像到 Docker Hub
-          tags: ${{ secrets.DOCKER_USERNAME }}/my-app:${{ github.sha }}  # 为镜像添加标签，使用 commit 的 sha 作为标签
+          tags: ${{ secrets.DOCKER_USERNAME }}/liuyan:${{ github.sha }}  # 为镜像添加标签，使用 commit 的 sha 作为标签
 
       # 可选：可以进行其他操作，比如清理工作
       - name: Logout from Docker Hub
