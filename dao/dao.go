@@ -9,8 +9,8 @@ import (
 )
 
 // 最大重试次数和重试间隔
-const maxRetries = 5
-const retryInterval = 2 * time.Second
+const maxRetries = 10
+const retryInterval = 5 * time.Second
 
 func InitMysql() *gorm.DB {
 	dsn := "root:123456@tcp(mysql-test:3306)/messagesboard?charset=utf8&parseTime=True&loc=Local"
