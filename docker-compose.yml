@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # Go 应用服务
+  app:
+    build: .
+    container_name: go-app
+    image: liuyan:v2  # 使用从 Docker Hub 推送的镜像名称
+    environment:
+      - DB_HOST=mysql-test      # 连接到 MySQL 容器，使用服务名
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=kangqiao2006714
+      - DB_NAME=messagesboard
+    depends_on:
+      - mysql    # 确保 MySQL 服务在应用之前启动
+    networks:
+      - app-network
+    command: ["-db", "true"]
+    restart: unless-stopped   # 配置容器崩溃时自动重启
+
+  # MySQL 服务
+  mysql:
+    image: mysql:latest   # 仍使用官方镜像 mysql:latest
+    container_name: mysql-test
+    environment:
+      MYSQL_ROOT_PASSWORD: kangqiao2006714
+      MYSQL_DATABASE: messagesboard
+    ports:
+      - "3307:3306"        # 映射 MySQL 端口到宿主机，方便本地调试
+    networks:
+      - app-network
+    restart: unless-stopped   # 配置容器崩溃时自动重启
+
+# 网络配置
+networks:
+  app-network:
+    driver: bridge
