@@ -24,7 +24,7 @@ services:
     image: mysql:latest   # 仍使用官方镜像 mysql:latest
     container_name: mysql-test
     environment:
-      MYSQL_ROOT_PASSWORD: kangqiao2006714
+      MYSQL_ROOT_PASSWORD: 123456
       MYSQL_DATABASE: messagesboard
     ports:
       - "3307:3306"        # 映射 MySQL 端口到宿主机，方便本地调试

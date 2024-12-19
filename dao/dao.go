@@ -13,7 +13,7 @@ const maxRetries = 5
 const retryInterval = 2 * time.Second
 
 func InitMysql() *gorm.DB {
-	dsn := "root:kangqiao2006714@tcp(mysql-test:3306)/messagesboard?charset=utf8&parseTime=True&loc=Local"
+	dsn := "root:123456@tcp(mysql-test:3306)/messagesboard?charset=utf8&parseTime=True&loc=Local"
 
 	var mysqlLogger logger.Interface
 	mysqlLogger = logger.Default.LogMode(logger.Error)
