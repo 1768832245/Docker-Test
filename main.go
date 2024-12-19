@@ -23,7 +23,6 @@ func main() {
 	option := flag.Parse()
 	if flag.IsWebStop(option) {
 		flag.SwitchOption(option)
-		return
 	}
 
 	r := gin.Default()

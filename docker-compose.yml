@@ -16,7 +16,7 @@ services:
       - mysql    # 确保 MySQL 服务在应用之前启动
     networks:
       - app-network
-    command: ["-db", "true"]
+    command: [ "./main", "-db", "true" ]
     restart: unless-stopped   # 配置容器崩溃时自动重启
 
   # MySQL 服务
