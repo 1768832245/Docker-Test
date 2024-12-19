@@ -10,7 +10,7 @@ services:
       - DB_HOST=mysql-test      # 连接到 MySQL 容器，使用服务名
       - DB_PORT=3306
       - DB_USER=root
-      - DB_PASSWORD=kangqiao2006714
+      - DB_PASSWORD=123456
       - DB_NAME=messagesboard
     depends_on:
       - mysql    # 确保 MySQL 服务在应用之前启动

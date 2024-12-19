@@ -9,7 +9,7 @@ import (
 )
 
 // 最大重试次数和重试间隔
-const maxRetries = 10
+const maxRetries = 5
 const retryInterval = 5 * time.Second
 
 func InitMysql() *gorm.DB {
