@@ -9,7 +9,7 @@ on:
 # 工作流的定义
 jobs:
   build:
-    runs-on: archlinux-latest
+    runs-on: ubuntu-latest
 
     steps:
       # 检出代码
